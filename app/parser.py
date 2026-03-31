@@ -1,4 +1,8 @@
 import re
+import json
+
+with open("app/categorias.json", "r", encoding="utf-8") as f:
+    CATEGORIAS = json.load(f)
 
 PALAVRAS_LIXO = ["reais", "real", "rs", "r$", "-", ":"]
 
@@ -30,10 +34,14 @@ def limpar_nome(nome: str):
 
 
 def categorizar(nome: str):
-    for chave in MAPEAMENTO:
-        if chave in nome:
-            return MAPEAMENTO[chave]
-    return nome  # fallback
+    for categoria, palavras in CATEGORIAS.items():
+        palavras_ordenadas = sorted(palavras, key=len, reverse=True)
+
+        for palavra in palavras_ordenadas:
+            if palavra in nome:
+                return categoria
+
+    return nome
 
 
 def parse_linhas(texto: str):

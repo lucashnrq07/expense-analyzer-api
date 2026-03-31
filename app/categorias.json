@@ -1,0 +1,53 @@
+{
+  "alimentacao": [
+    "ifood", "restaurante", "lanchonete", "padaria", "mercado", "supermercado",
+    "burger king", "mc donalds", "mcdonalds", "subway", "pizza", "pizzaria",
+    "hamburguer", "lanche", "comida", "cafe", "cafeteria", "açai", "sorvete",
+    "japones", "churrasco", "delivery", "bebida", "bar", "adega"
+  ],
+
+  "transporte": [
+    "uber", "uber trip", "99", "99pop", "taxi", "onibus", "metrô", "metro",
+    "trem", "combustivel", "gasolina", "etanol", "diesel", "posto",
+    "estacionamento", "pedagio", "rodovia"
+  ],
+
+  "moradia": [
+    "aluguel", "condominio", "luz", "energia", "eletricidade",
+    "agua", "saneamento", "internet", "wifi", "telefone",
+    "manutencao", "reparo", "conserto", "moveis", "eletrodomestico"
+  ],
+
+  "lazer": [
+    "cinema", "netflix", "spotify", "youtube", "show", "balada",
+    "viagem", "hotel", "airbnb", "parque", "jogo", "steam",
+    "playstation", "xbox", "festa", "evento"
+  ],
+
+  "saude": [
+    "farmacia", "remedio", "medicamento", "medico", "consulta",
+    "hospital", "exame", "laboratorio", "dentista", "plano de saude"
+  ],
+
+  "educacao": [
+    "curso", "faculdade", "escola", "mensalidade", "livro",
+    "apostila", "material escolar", "udemy", "alura", "treinamento"
+  ],
+
+  "financas": [
+    "emprestimo", "financiamento", "cartao", "juros", "taxa",
+    "banco", "tarifa", "seguro", "investimento"
+  ],
+
+  "compras": [
+    "amazon", "mercado livre", "shopee", "magazine luiza",
+    "roupa", "tenis", "sapato", "acessorio", "eletronico",
+    "celular", "notebook"
+  ],
+
+  "pets": [
+    "petshop", "racao", "veterinario", "banho", "tosa"
+  ],
+
+  "outros": []
+}
