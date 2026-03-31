@@ -1,3 +1,5 @@
+import re
+
 def parse_linhas(texto: str):
     linhas = texto.strip().split("\n")
 
@@ -5,20 +7,34 @@ def parse_linhas(texto: str):
     erros = []
 
     for i, linha in enumerate(linhas):
-        partes = linha.split()
+        linha_original = linha
 
-        if len(partes) != 2:
-            erros.append(f"Linha {i+1} inválida: {linha}")
+        # regex para encontrar número (inteiro ou decimal)
+        match_valor = re.search(r"\d+[.,]?\d*", linha)
+
+        if not match_valor:
+            erros.append(f"Nenhum valor encontrado na linha {i+1}: {linha_original}")
             continue
 
-        nome, valor = partes
+        valor_str = match_valor.group()
+
+        # normaliza vírgula pra ponto
+        valor_str = valor_str.replace(",", ".")
 
         try:
-            valor = float(valor)
+            valor = float(valor_str)
         except:
-            erros.append(f"Valor inválido na linha {i+1}: {linha}")
+            erros.append(f"Erro ao converter valor na linha {i+1}: {linha_original}")
             continue
 
-        resultado.append((nome.lower(), valor))
+        # remove o valor da linha pra sobrar o nome
+        nome = linha.replace(match_valor.group(), "")
+        nome = nome.replace("R$", "").replace("-", "").replace(":", "").strip().lower()
+
+        if not nome:
+            erros.append(f"Nome não encontrado na linha {i+1}: {linha_original}")
+            continue
+
+        resultado.append((nome, valor))
 
     return resultado, erros
